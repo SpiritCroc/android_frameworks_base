@@ -205,7 +205,7 @@
 
     <!-- Slim recents app sidebar queue app toast -->
     <string name="toast_recents_queue_app">Launch %s after closing recents</string>
-    <string name="toast_recents_cancel_queued_app">Canceled app launch</string>
+    <string name="toast_recents_cancel_queued_app">Cancelled app launch</string>
 
     <!-- Path data for portrait battery -->
     <string name="battery_portrait_path_full" translatable="false">M19,22v-20L5,2V22H19z</string>
