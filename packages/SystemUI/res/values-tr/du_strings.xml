@@ -158,4 +158,9 @@
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
+  <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Ses</string>
+  <string name="quick_settings_sound_ring">Zil</string>
+  <string name="quick_settings_sound_vibrate">Titreşim</string>
+  <string name="quick_settings_sound_silent">Sessiz</string>
 </resources>

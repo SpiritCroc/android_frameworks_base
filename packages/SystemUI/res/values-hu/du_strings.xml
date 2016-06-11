@@ -158,4 +158,9 @@
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
+  <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Hang</string>
+  <string name="quick_settings_sound_ring">Csengés</string>
+  <string name="quick_settings_sound_vibrate">Rezgés</string>
+  <string name="quick_settings_sound_silent">Csendes</string>
 </resources>

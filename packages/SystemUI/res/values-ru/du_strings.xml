@@ -159,4 +159,9 @@
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
+  <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Звук</string>
+  <string name="quick_settings_sound_ring">Ригтон</string>
+  <string name="quick_settings_sound_vibrate">Вибрация</string>
+  <string name="quick_settings_sound_silent">Беззвучный</string>
 </resources>
