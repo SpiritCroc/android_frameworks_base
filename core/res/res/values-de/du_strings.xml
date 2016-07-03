@@ -108,4 +108,6 @@
   <string name="adb_both_active_notification_title">ADB über USB &amp; Netzwerk aktiviert</string>
   <!-- ADB notification message-->
   <string name="adb_active_generic_notification_message">Berühren, um Debugging zu deaktivieren.</string>
+  <!-- ADB enabled, but not connected notification -->
+  <string name="adb_not_connected_notification_title">ADB inaktiv</string>
 </resources>
