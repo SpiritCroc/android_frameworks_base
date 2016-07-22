@@ -172,4 +172,15 @@
   <string name="action_save_success">Сохранено</string>
   <string name="action_save_fault">Сохранение не удалось</string>
   <string name="action_edit">Изменить</string>
+  <!-- QS location sensors mode -->
+  <string name="accessibility_quick_settings_location_battery_saving">Отправка местоположения: режим экономии батареи.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Отправка местоположения: только по GPS.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Отправка местоположения: режим высокой точности.</string>
+  <string name="accessibility_quick_settings_location_changed_battery_saving">Служба отправки местоположения переключена в режим экономии батареи.</string>
+  <string name="accessibility_quick_settings_location_changed_gps_only">Для отправки местоположения используются только данные GPS.</string>
+  <string name="accessibility_quick_settings_location_changed_high_accuracy">Служба отправки местоположения переключена в режим высокой точности.</string>
+  <string name="quick_settings_location_detail_title">Определение местоположения</string>
+  <string name="quick_settings_location_battery_saving_label">По координатам сети</string>
+  <string name="quick_settings_location_gps_only_label">По спутникам GPS</string>
+  <string name="quick_settings_location_high_accuracy_label">По всем источникам</string>
 </resources>

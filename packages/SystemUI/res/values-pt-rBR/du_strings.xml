@@ -166,4 +166,15 @@
   <string name="action_save_success">Salvo</string>
   <string name="action_save_fault">Salvar foi malsucedido</string>
   <string name="action_edit">Editar</string>
+  <!-- QS location sensors mode -->
+  <string name="accessibility_quick_settings_location_battery_saving">Modo de localização: economia de bateria.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Localização: somente no dispositivo.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Localização: modo de alta precisão.</string>
+  <string name="accessibility_quick_settings_location_changed_battery_saving">Modo de localização alterado para economia de bateria.</string>
+  <string name="accessibility_quick_settings_location_changed_gps_only">Modo de localização alterado para somente no dispositivo.</string>
+  <string name="accessibility_quick_settings_location_changed_high_accuracy">Modo de localização alterado para alta precisão.</string>
+  <string name="quick_settings_location_detail_title">Modo de localização</string>
+  <string name="quick_settings_location_battery_saving_label">Economia de bateria</string>
+  <string name="quick_settings_location_gps_only_label">Somente no dispositivo</string>
+  <string name="quick_settings_location_high_accuracy_label">Alta precisão</string>
 </resources>
