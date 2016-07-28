@@ -418,7 +418,7 @@ public class AppSidebar extends FrameLayout {
         Rect r = new Rect();
         getWindowVisibleDisplayFrame(r);
         int windowHeight = r.bottom - r.top;;
-        int statusBarHeight = r.top;
+        final int statusBarHeight = r.top;
         if (mScrollView != null)
             removeView(mScrollView);
 
@@ -444,11 +444,7 @@ public class AppSidebar extends FrameLayout {
         int numItems = (int)Math.floor(windowHeight / desiredItemSize);
         ITEM_LAYOUT_PARAMS.height = windowHeight / numItems;
         ITEM_LAYOUT_PARAMS.width = desiredItemSize;
-        LinearLayout.LayoutParams firstItemLayoutParams = new LinearLayout.LayoutParams(
-                ITEM_LAYOUT_PARAMS.width, ITEM_LAYOUT_PARAMS.height);
-        firstItemLayoutParams.topMargin += statusBarHeight;
 
-        boolean firstIcon = true;
         for (View icon : mContainerItems) {
             icon.setOnClickListener(mItemClickedListener);
             icon.setOnLongClickListener(mItemLongClickedListener);
@@ -458,13 +454,7 @@ public class AppSidebar extends FrameLayout {
             }
             icon.setClickable(true);
             icon.setPadding(0, padding, 0, padding);
-            if (firstIcon) {
-                // First icon should not hide behind the status bar
-                mAppContainer.addView(icon, firstItemLayoutParams);
-                firstIcon = false;
-            } else {
-                mAppContainer.addView(icon, ITEM_LAYOUT_PARAMS);
-            }
+            mAppContainer.addView(icon, ITEM_LAYOUT_PARAMS);
         }
 
         // we need our horizontal scroll view to wrap the linear layout
@@ -478,6 +468,30 @@ public class AppSidebar extends FrameLayout {
         mScrollView.addView(mAppContainer, SCROLLVIEW_LAYOUT_PARAMS);
         addView(mScrollView, SCROLLVIEW_LAYOUT_PARAMS);
         mAppContainer.setFocusable(true);
+
+        // first icon should not hide behind the status bar
+        if (!mContainerItems.isEmpty()) {
+            final View firstIcon = mContainerItems.get(0);
+            new Handler().post(new Runnable() {
+                @Override
+                public void run() {
+                    // only do something if we are not in fullscreen
+                    if ((getSystemUiVisibility() & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                        // check whether status bar and sidebar are overlaying
+                        int[] sidebarPos = new int[2];
+                        mScrollView.getLocationOnScreen(sidebarPos);
+                        if (sidebarPos[1] < statusBarHeight) {
+                            // add top margin to the first item to keep it out of the status bar
+                            LinearLayout.LayoutParams firstItemLayoutParams =
+                                    new LinearLayout.LayoutParams(ITEM_LAYOUT_PARAMS.width,
+                                                ITEM_LAYOUT_PARAMS.height);
+                            firstItemLayoutParams.topMargin += statusBarHeight - sidebarPos[1];
+                            firstIcon.setLayoutParams(firstItemLayoutParams);
+                        }
+                    }
+                }
+            });
+        }
     }
 
     private TextView createAppItem(ActionConfig config) {
